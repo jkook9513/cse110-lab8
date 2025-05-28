@@ -10,7 +10,7 @@ const RECIPE_URLS = [
         'https://adarsh249.github.io/Lab8-Starter/recipes/4_50-indulgent-thanksgiving-side-dishes-for-any-holiday-gathering.json',
         'https://adarsh249.github.io/Lab8-Starter/recipes/5_healthy-thanksgiving-recipe-crockpot-turkey-breast.json',
         'https://adarsh249.github.io/Lab8-Starter/recipes/6_one-pot-thanksgiving-dinner.json',
-      ];
+];
 
 // Installs the service worker. Feed it some initial URLs to cache
 self.addEventListener('install', function (event) {
@@ -48,7 +48,7 @@ self.addEventListener('fetch', function (event) {
       // B8. TODO - If the request is in the cache, return with the cached version.
       //            Otherwise fetch the resource, add it to the cache, and return
       //            network response.
-      return cache.match(event.request).then((cachedResponse) => {
+      return cache.match(event.request.url).then((cachedResponse) => {
         if (cachedResponse) {
           return cachedResponse;
         }

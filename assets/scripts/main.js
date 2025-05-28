@@ -58,7 +58,13 @@ function initializeServiceWorker() {
         });
         // B4. TODO - Once the service worker has been successfully registered, console
         //            log that it was successful.
-        console.log('Service Worker registered successfully:', registration);
+        if(registration.installing) {
+          console.log('Service Worker installing');
+        } else if (registration.waiting) {
+          console.log('Service Worker installed');
+        } else if (registration.active) {
+          console.log('Service Worker active');
+        }
       } catch (error) {
         // B5. TODO - In the event that the service worker registration fails, console
         //            log that it has failed.
@@ -88,7 +94,7 @@ async function getRecipes() {
   // The rest of this method will be concerned with requesting the recipes
   // from the network
   // A2. TODO - Create an empty array to hold the recipes that you will fetch
-  const recipesArray = [];
+  let recipesArray = [];
   // A3. TODO - Return a new Promise. If you are unfamiliar with promises, MDN
   //            has a great article on them. A promise takes one parameter - A
   //            function (we call these callback functions). That function will
