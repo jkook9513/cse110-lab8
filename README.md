@@ -1,5 +1,5 @@
 # CSE110 - Lab 8
-![https://jkook9513.github.io/cse110-lab8/](https://jkook9513.github.io/cse110-lab8/)
+[https://jkook9513.github.io/cse110-lab8/](https://jkook9513.github.io/cse110-lab8/)
 <br>
 ***How are graceful degradation and service workers related?***
 <br>
